@@ -96,8 +96,8 @@ class MAX31855(object):
 
     def test_conversions(self):
         '''Verify conversion to signed two's complement int and conversion factor from datasheet is working as expected.'''
-        print "Test conversions from MAX31855 datasheet"
-        print "External Thermocouple:"
+        print("Test conversions from MAX31855 datasheet")
+        print("External Thermocouple:")
         tc_tests = [['0110 0100 0000 00',1600.00],
                 ['0011 1110 1000 00',1000.00],
                 ['0000 0110 0100 11',100.75],
@@ -109,8 +109,8 @@ class MAX31855(object):
         for test in tc_tests:
             value =  self.convert_tc_data(Bits(bin=test[0]))
             result = (value == test[1])
-            print '"{}" should equal {}: {}'.format(test[0], test[1], result)
-        print "Internal Reference Junction:"
+            print('"{}" should equal {}: {}'.format(test[0], test[1], result))
+        print("Internal Reference Junction:")
         rj_tests = [['0111 1111 0000',127.0000],
                 ['0110 0100 1001',100.5625],
                 ['0001 1001 0000', 25.0000],
@@ -122,7 +122,7 @@ class MAX31855(object):
         for test in rj_tests:
             value =  self.convert_rj_data(Bits(bin=test[0]))
             result = (value == test[1])
-            print '"{}" should equal {}: {} ({})'.format(test[0], test[1], result, value)
+            print('"{}" should equal {}: {} ({})'.format(test[0], test[1], result, value))
 
 class MAX31855Error(Exception):
      def __init__(self, value):
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     thermocouple.test_conversions()
     while(True):
         try:
-            print "tc: {} and rj: {}".format(thermocouple.get(), thermocouple.get_rj())
+            print("tc: {} and rj: {}".format(thermocouple.get(), thermocouple.get_rj()))
             time.sleep(.5)
         except KeyboardInterrupt:
             break
