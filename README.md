@@ -33,6 +33,7 @@ See max31855.py for a multi-chip example.
       Now use as many chips a you have extra pins!
 - Removed quick2wire dependency.
 - Removed bitstring dependency; bit extraction and two's complement conversion now done in library.
+- Added `cleanup()` method to be called on close (or destruction of instance), which does a targeted version of `GPIO.cleanup()`.
 
 NOTE: If you were using the previous hardware-based version, you will have to update your code to match the new init function:
 `MAX31855(cs_pin, clock_pin, data_pin, units)`
