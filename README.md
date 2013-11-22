@@ -21,6 +21,9 @@ thermocouple.cleanup()
 
 ```
 
+*Note: these are the GPIO pin numbers, not the header pin numbers.*  
+*This can be overriden by passing `GPIO.BOARD` as the fifth [init parameter](https://github.com/Tuckie/max31855/blob/master/max31855.py#L11).*
+
 See max31855.py for a multi-chip example.
 
 ## Changelog
