@@ -16,6 +16,7 @@ class MAX31855(object):
         - clock_pin: Clock (SCLK / SCK) pin (Any GPIO)
         - data_pin:  Data input (SO / MOSI) pin (Any GPIO)
         - units:     (optional) unit of measurement to return. ("c" (default) | "k" | "f")
+        - board:     (optional) pin numbering method as per RPi.GPIO library (GPIO.BCM (default) | GPIO.BOARD)
 
         '''
         self.cs_pin = cs_pin
